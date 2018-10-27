@@ -32,8 +32,8 @@ This project will include the sections listed below.  Starting with basic vector
   - [50] Integration of Raster and Vector data
   - [90] Random Forest Modeling
 
-## Libraries
+## 00. Libraries
 For those new to R or scripting in general it is important to realize that the base scripting/programing language is expanded using additional libraries.  _Note other languages call these packages (e.g. Python)_. In the files/scripts provided in here the additional libraries are listed at the top of the file with a short description. The intent will be to list all of the libraries used throughout this entire package set.  However, unless they are explicitly needed in the current script they will be commented out.
 
 ## 10. Vector Data
-This script walks through how to import vector data, explore the data types and attributes, and plot the data based on the attributes.  
+This script walks through how to import vector data, explore the data types and attributes, and plot the data based on the attributes.  Examples include Line, Polygon, and Point datatypes.  
