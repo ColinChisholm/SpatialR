@@ -35,5 +35,10 @@ This project will include the sections listed below.  Starting with basic vector
 ## 00. Libraries
 For those new to R or scripting in general it is important to realize that the base scripting/programing language is expanded using additional libraries.  _Note other languages call these packages (e.g. Python)_. In the files/scripts provided in here the additional libraries are listed at the top of the file with a short description. The intent will be to list all of the libraries used throughout this entire package set.  However, unless they are explicitly needed in the current script they will be commented out.
 
-## 10. Vector Data
+## Vector Layers
+### 10. Vector Data - Working with Single Layers
 This script walks through how to import vector data, explore the data types and attributes, and plot the data based on the attributes.  Examples include Line, Polygon, and Point datatypes.  
+
+### 11. Vector Data - Working with Multiple Layers
+This script, again following the NEON tutorials, demonstrates how to work with multiple layers.  
+Adding additional layers to a plot is a simple process of using the additional flag of  `add = TRUE` in a `plot()` call.  The greater tricks are related to how to build legends.
