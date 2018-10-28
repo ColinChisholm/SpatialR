@@ -12,11 +12,11 @@
 # library(foreign)      #Import Foriegn to R data types.  Generally used to directly read .dbf files (attributes of Shapefiles)
 # 
 # #spatial data specific libraries 
-library(sp)             #Essential Spatial Data
+#library(sp)             #Essential Spatial Data
 library(rgdal)          #GDAL available to R 
 # library(rgeos)        #for topology operations on geometries
 # library(geosphere)    #Spherical trigonometry for geographic applications. That is, compute distances and re-lated measures for angular (longitude/latitude) locations
-# library(raster)       #Raster import and analysis 
+library(raster)       #Raster import and analysis 
 # library(rts)          #For comparing time rasters in time series
 # 
 # #For Point Cloud Data Analysis.  

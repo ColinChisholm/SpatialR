@@ -13,11 +13,11 @@
 # library(foreign)      #Import Foriegn to R data types.  Generally used to directly read .dbf files (attributes of Shapefiles)
 # 
 # #spatial data specific libraries 
-library(sp)           #Essential Spatial Data
+# library(sp)           #Essential Spatial Data
 library(rgdal)        #GDAL available to R 
 # library(rgeos)        #for topology operations on geometries
 # library(geosphere)    #Spherical trigonometry for geographic applications. That is, compute distances and re-lated measures for angular (longitude/latitude) locations
-# library(raster)       #Raster import and analysis 
+library(raster)       #Raster import and analysis 
 # library(rts)          #For comparing time rasters in time series
 # 
 # #For Point Cloud Data Analysis.  
@@ -32,7 +32,7 @@ library(rgdal)        #GDAL available to R
 ##### DATA IMPORT #####################################################################################################
 # Scripting generated following the instructions from the NEON turorial 
 # A. Set working environment
-  setwd("E:/workspace/SpatialR/data/NEON_Vector")
+  setwd("E:/workspace/SpatialR/SpatialR/data/NEON_Vector")
 
 ##### Importing and Exploring Data ####################################################################################
 # B1. Import Spatial Vector Data -- here I am Using the NEON example dataset 
@@ -45,7 +45,7 @@ library(rgdal)        #GDAL available to R
   
 # B2. Explore the data  
   summary(AOI) # summary provides meta-data on the file. 
-  head(Tower)  # displays the first ten entries in the attribute table 
+  head(Roads)  # displays the first ten entries in the attribute table 
   class(AOI)   # Type of vector data -- in this case a polygon for to be more precise a: SpatialPolygonDataFrame
   length(Roads)# How many features are in the data.  As with Other dataframes returns the length of the attribute table 
   crs(Tower)   # Projection information
@@ -117,7 +117,9 @@ library(rgdal)        #GDAL available to R
     
     #soilCol <- palette(terrain.colors(x))                      #palette() specifies the colors based x
     soilCol <- palette(rainbow(x))                              #Alternate Color Palette
-    symbols <- c(15,17)[Plots$soilTypeOr]                       #This will be the symbol types used google image: "R pch" for a summary of each
+    symLeg <- c(15,17)                                          #2 symbols used to represent the legend entry
+    symbols <- c(symLeg)[Plots$soilTypeOr]                      #This will be the symbol types used google image: "R pch" for a summary of each
+  
     
     plot(Plots,
          col = soilCol[Plots$soilTypeOr], 
@@ -126,7 +128,7 @@ library(rgdal)        #GDAL available to R
     
     legend("bottomright",
            legend = levels(Plots$soilTypeOr),        
-           pch = symbols,
+           pch = symLeg,
            col = soilCol, 
            bty = "n",                                           #No box around legend
            cex = 2                                              #Magnify the text 

@@ -3,7 +3,7 @@ Author: Colin Chisholm
 
 Initiated: Oct. 27, 2018
 
-Last Update:
+Last Update: Oct. 28, 2018
 
 ## Purpose
 To create a series of R scripts starting with basic spatial data imports and analysis.  This project is not intended to create original or new material for the R community but to be used for self training and to be provided as a resource for others.  Additionally, my goal is not (at least to start) worry about cartography in R but to focus on data extraction and manipulation.  
@@ -42,3 +42,38 @@ This script walks through how to import vector data, explore the data types and 
 ### 11. Vector Data - Working with Multiple Layers
 This script, again following the NEON tutorials, demonstrates how to work with multiple layers.  
 Adding additional layers to a plot is a simple process of using the additional flag of  `add = TRUE` in a `plot()` call.  The greater tricks are related to how to build legends.
+
+### 12. Vector Data - Projections and Transformations
+Transformation of data from one projection to another is quite straight forward using `spTransform()`. For example:
+
+```R
+ProjectCRS <- crs(States)                #sets CRS value of Layer States
+Tower <- spTransform(Tower, ProjectCRS)  #Transforms Tower Layer to States the ProjectCRS
+```
+
+### 13. Import CSV Vector Data and save to Shapefile
+Process:
+1. Reading in the data using `read.csv` examine the data for geographic information `str(data)``
+2. Look up the CRS using the web. For example: http://www.spatialreference.org/
+3. OR use `spTransform` if you have a layer with the correct projection in it (_easiest_)
+4. Convert the CSV from a table to spatial object
+5. Export as shapefile
+
+```R
+#Convert loaded dataframe (containing spatial data) to a spatial object
+dataPoints <- SpatialPointsDataFrame(dataPoints[,1:2],    #The x y coordinates
+                                 dataPoints,              #The Data to assign
+                                 proj4string = ProjectCRS #Assign the CRS
+                                 )
+#Export as shapefile
+writeOGR(dataPoints, "E:/workspace/SpatialR/exports", "PlotData", driver = "ESRI Shapefile")
+```
+
+The NEON lab also discusses extent and changing the extent of a plot as per this example
+```R
+# adjust the plot extent using x and ylim
+plot(myData,
+     main="Title",
+     xlim=c(xmin,xmax),
+     ylim=c(ymin,ymax))
+```
