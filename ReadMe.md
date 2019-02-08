@@ -6,7 +6,7 @@ Initiated: Oct. 27, 2018
 Last Update: Oct. 28, 2018
 
 ## Purpose
-To create a series of R scripts starting with basic spatial data imports and analysis.  This project is not intended to create original or new material for the R community but to be used for self training and to be provided as a resource for others.  Additionally, my goal is not (at least to start) worry about cartography in R but to focus on data extraction and manipulation.  
+To create a series of R scripts starting with basic spatial data imports and analysis.  This project is not intended to create original or new material for the R community but to be used for self training and to be provided as a resource for others.  Additionally, my goal is not (at least to start) worry about cartography in R but to focus on data extraction and manipulation.
 
 ## Introducing R
 The purpose of this project is not to introduce people to the basic functionality of R.  Readers are encouraged to visit sites like such as
@@ -28,7 +28,7 @@ To some extent I am reinventing the wheel here.  There are other sources to find
 ## Project Outline / Map
 This project will include the sections listed below.  Starting with basic vector and raster import, display, and data manipulation. These will be followed by integration of raster and vector data sets.  Currently, Random Forest Modeling is planned as this is a major component of ongoing research projects I am involved with (PEM Project).
 
-  - [00] Libraries  
+  - [00] Libraries
   - [10] Vector data
   - [20] Raster data
   - [30] Integration of Raster and Vector data
@@ -46,7 +46,7 @@ Data can be exported as a shapefile using `writeOGR(myData, PATH, NAME, driver =
 
 
 ### Data Examination
-Unique to spatial data: `crs()`  `extent()`.  Otherwise use common R dataframe commands such as `summary()` `str()` `length()` and many more.  Essentially consider the spatial vector data as just a data frame with spatial information attached.  
+Unique to spatial data: `crs()`  `extent()`.  Otherwise use common R dataframe commands such as `summary()` `str()` `length()` and many more.  Essentially consider the spatial vector data as just a data frame with spatial information attached.
 
 #### Rasters
 Import a raster `raster(FileName)`
@@ -65,7 +65,7 @@ myPoints <- readOGR(PATH, FILENAME)      #import vector data (e.g. points)
 myRaster <- raster(FILENAME)             #import raster data (filename including path)
 
 # extract the mean of a  11.28m plot around the point (circular)
-myPoints$RasterInfoMean <- extract(myRaster, myPoints, fun = "mean", buffer = 11.28)  
+myPoints$RasterInfoMean <- extract(myRaster, myPoints, fun = "mean", buffer = 11.28)
 # OR extract exact the exact point values
 myPoints$RasterInfoPoint <- extract(myRaster, myPoints)
 
@@ -82,10 +82,10 @@ For those new to R or scripting in general it is important to realize that the b
 -------------------------
 ## Vector Layers
 ### 10. Vector Data - Working with Single Layers
-This script walks through how to import vector data, explore the data types and attributes, and plot the data based on the attributes.  Examples include Line, Polygon, and Point datatypes.  
+This script walks through how to import vector data, explore the data types and attributes, and plot the data based on the attributes.  Examples include Line, Polygon, and Point datatypes.
 
 ### 11. Vector Data - Working with Multiple Layers
-This script, again following the NEON tutorials, demonstrates how to work with multiple layers.  
+This script, again following the NEON tutorials, demonstrates how to work with multiple layers.
 Adding additional layers to a plot is a simple process of using the additional flag of  `add = TRUE` in a `plot()` call.  The greater tricks are related to how to build legends.
 
 ### 12. Vector Data - Projections and Transformations
