@@ -1,5 +1,6 @@
-# Title: Spatial R 
+# Title: Spatial R
 # Section: 00 The Libraries
+# Purposes: Prepare your R installation with libraries used in spatial analysis
 # by Colin Chisholm
 # with thanks to Tristan Goodbody for providing a number of these to the list.
 # Last updated: Dec. 5, 2018
