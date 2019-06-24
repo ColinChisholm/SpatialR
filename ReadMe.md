@@ -5,6 +5,10 @@ Initiated: Oct. 27, 2018
 
 Last Update: Oct. 28, 2018
 
+_This was my first examination of looking at spatial data in R.  Since the creation of this information I have found many other resources._
+
+_One of the best resources I have found for R coding and spatial data is **[Geo-computation with R](https://bookdown.org/robinlovelace/geocompr/)** by Robin Lovelace, Jakub Nowosad, and Jannes Muenchow_.
+
 ## Purpose
 To create a series of R scripts starting with basic spatial data imports and analysis.  This project is not intended to create original or new material for the R community but to be used for self training and to be provided as a resource for others.  Additionally, my goal is not (at least to start) worry about cartography in R but to focus on data extraction and manipulation.
 
